@@ -1,8 +1,9 @@
 import React, { FC } from "react";
 
 interface ModalProps {
-  isVisible: boolean;
+  isVisible?: boolean;
   title: string;
+  onClickCategory() : void;
   // leftButton: string;
   // rightButton: string;
   // onLeftPress: void;
@@ -13,7 +14,9 @@ const Modal: FC<ModalProps> = (props) => {
   return props.isVisible ? (
     <div id="modal" className="modal">
       <div className="main-container">
-        <h1>{props.title}</h1>
+        <h4>What do you want to create?</h4>
+        <button onClick={props.onClickCategory}>CATEGORY</button>
+        <button>SERVICE</button>
       </div>
     </div>
   ) : null;
